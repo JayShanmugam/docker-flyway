@@ -2,11 +2,11 @@
 
 Migrate mysql docker containers.
 
-Simple [docker](http://docker.com) container that uses [flyway](http://flywaydb.org) to migrate mysql containers. 
+Simple [docker](http://docker.com) container that uses [flyway](http://flywaydb.org) to migrate mysql containers.
 
-  $ docker run --name dbserver -d -e MYSQL_ROOT_PASSWORD=secretpw mysql
-  $ docker run -e FLYWAY_COMMAND=migrate --link dbserver:db -v /my/app/migrations/:/migrations davidlanger/flyway
-  
+    $ docker run --name dbserver -d -e MYSQL_ROOT_PASSWORD=secretpw mysql
+    $ docker run -e FLYWAY_COMMAND=migrate --link dbserver:db -v /my/app/migrations/:/migrations davidlanger/flyway
+
 The first commands runs a mysql server and names it `dbserver`. The second one does three things:
 
 1. Sets an environment variable `FLYWAY_COMMAND` to `migrate`. All other flway commands are valid here.
